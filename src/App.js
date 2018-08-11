@@ -40,9 +40,9 @@ class App extends Component {
 
   OnSubmit = (event) => {
       this.setState({imageURL: this.state.input})
-    console.log(event.target.value);
+    //console.log(event.target.value);
           app.models.predict(Clarifai.FACE_DETECT_MODEL, 
-              this.setState.input)
+              this.state.input)
           .then(
         function(response) {
           console.log(response.outputs[0].data.regions[0].region_info.bounding_box);
@@ -64,9 +64,6 @@ class App extends Component {
        <Rank/>
        <ImageLinkForm OnInputChange={this.OnInputChange} OnSubmit={this.OnSubmit}/>
         <FaceRecognition imageURL={this.state.input}/>
-        {
-        // <App/>
-        }
       </div>
     );
   }
