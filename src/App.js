@@ -18,7 +18,7 @@ const app = new Clarifai.App({
 const particlesOptions = {
    particles: {
              number: {
-                value: 30,
+                value: 100,
                 density: {
                   enable: true,
                   value_area: 100
