@@ -18,14 +18,15 @@ const app = new Clarifai.App({
 const particlesOptions = {
    particles: {
              number: {
-                value: 100,
+                value: 10,
                 density: {
                   enable: true,
-                  value_area: 100
+                  value_area: 200
                   }
               }  
            }
          }
+
 
 class App extends Component {
   constructor() {
@@ -38,6 +39,13 @@ class App extends Component {
       isSignIn: false 
     }
   }
+
+//Codigo para testar o servidor 
+// componentDidMount() { 
+//   fetch('http://localhost:3000/')
+//     .then(response => response.json())
+//     .then(console.log)
+// }
 
 calculateFaceLocation = (data) => {
   const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
