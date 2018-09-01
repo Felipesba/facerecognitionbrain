@@ -36,8 +36,29 @@ class App extends Component {
       imageURL: '',
       box: {},
       route: 'SignIn',
-      isSignIn: false 
+      isSignIn: false,
+      users: 
+          {
+            id: '',
+            name: '',
+            email: '',
+            password: '',
+            entries: 0 ,
+            joined: ''
+          }
     }
+  }
+
+  loadUsers = (data) => {
+    this.setState({users: {
+      id: data.id,
+      name: data.name,
+      email: data.email,
+      password: data.password,
+      entries: data.entries,
+      joined: data.joined
+      }
+    }) 
   }
 
 //Codigo para testar o servidor 
@@ -111,7 +132,7 @@ displayFaceBox = (box) => {
             </div> 
           : ( this.state.route === 'SignIn'
                 ? <SignIn onRouteChange={this.onRouteChange} />
-                : <Register onRouteChange={this.onRouteChange} />
+                : <Register loadUsers={this.loadUsers} onRouteChange={this.onRouteChange} />
             )  
         } 
       </div>
