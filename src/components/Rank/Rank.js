@@ -2,16 +2,14 @@ import React from 'react';
 import 'tachyons';
 import './Rank.js';
 
-const Rank = () => {
+const Rank = ({name, entries}) => {
     return (
-      <div>
         <div className = 'white f3'>
-          {'Felipe Seu Rank atual é....'}
+        {`${name} , Seu Rank atual é....`}
+            <div className='white f1 '>
+              {entries}
+            </div>
         </div>
-        <div className='white f1'>
-          {'#2'}
-        </div>
-      </div>
     );
   }
 
